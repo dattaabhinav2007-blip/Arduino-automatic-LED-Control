@@ -1,1 +1,35 @@
+AUTOMATIC LED LIGHT USING LDR
+#include<string.h>
+int lightPin=A2;
+int LEDPin-9;
+int LEDWORTH;
+int LEDOFF-0;
+int lightval;
+int dt=500;
+String msg "LEDBRIGHTNESS IS: ";
+String msg1="light value is: ";
 
+void setup() {
+// put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(light.Pin, INPUT);
+pinMode(LEDPin, OUTPUT);
+}
+
+void loop() {
+// put your main code here, to run repeatedly:
+lightVal-analogRead(lightPin);
+Serial.println(msg1);
+Serial.println(lightVal);
+delay(dt);
+LEDWORTH (-255./294.)*lightVal+255;
+Serial.println(msg);
+Serial.println(LEDWORTH);
+delay(dt);
+if (LEDWORTH>0) {
+    analogWrite(LEDPin, LEDWORTH);
+}
+else{
+  analogWrite(LEDPin, LEDOFF);
+}
+}
